@@ -1,7 +1,9 @@
 <?php
 
 use controller\PostController;
+use model\classOfMagazine\constInterface;
 
+include_once "model/classOfMagazine/constInterface.php";
 include_once "model/database/DBConnect.php";
 include_once "model/classOfMagazine/PostDB.php";
 include_once "model/classOfMagazine/Post.php";
@@ -26,13 +28,13 @@ switch ($page) {
     case "":
         $controller->getAll();
         break;
-    case "add-post":
+    case constInterface::ADD:
         $controller->addPost();
         break;
-    case "delete-post":
+    case constInterface::DELETE:
         $controller->deletePost();
         break;
-    case "edit-post":
+    case constInterface::EDIT:
         $controller->editPost();
     default:
 }

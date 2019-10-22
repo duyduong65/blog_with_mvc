@@ -77,7 +77,6 @@ class PostDB
 
     public function findPostById($id)
     {
-
         $sql = "SELECT * FROM posts WHERE id=:id";
         $stmt = $this->conn->prepare($sql);
         $stmt->bindParam(":id", $id);
