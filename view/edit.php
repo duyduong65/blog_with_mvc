@@ -2,17 +2,11 @@
 
 use controller\PostController;
 
-//include_once "../model/database/DBConnect.php";
-//include_once "../model/classOfMagazine/PostDB.php";
-//include_once "../model/classOfMagazine/Post.php";
-include_once "../controller/PostController.php";
-
 $id = $_GET['id'];
 
 $controller = new PostController();
 
-$abc = $controller->findPostById($id);
-var_dump($abc);
+$post = $controller->findPostById($id);
 
 ?>
 <!doctype html>
@@ -29,22 +23,22 @@ var_dump($abc);
     <table>
         <tr>
             <td>Title:</td>
-            <td><input type="text" name="title" value="<?php ?>"></td>
+            <td><input type="text" name="title" value="<?php echo $post->getTitle() ?>"></td>
         </tr>
         <tr>
             <td>Teaser:</td>
-            <td><input type="text" name="teaser"></td>
+            <td><input type="text" name="teaser" value="<?php echo $post->getTeaser() ?>"></td>
         </tr>
         <tr>
             <td>Content</td>
-            <td><input type="text" name="content"></td>
+            <td><input type="text" name="content" value="<?php echo $post->getContent() ?>"></td>
         </tr>
         <tr>
             <td>Created</td>
-            <td><input type="text" name="created"></td>
+            <td><input type="text" name="created"value="<?php echo $post->getCreated() ?>"></td>
         </tr>
         <tr>
-            <td><input type="submit" value="Add"></td>
+            <td><input type="submit" value="update"></td>
         </tr>
     </table>
 </form>

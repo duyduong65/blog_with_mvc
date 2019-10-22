@@ -44,6 +44,6 @@ class PostController
 
     public function findPostById($id)
     {
-        $this->postDB->findPostById($id);
+      return  $this->postDB->findPostById($id);
     }
 }
